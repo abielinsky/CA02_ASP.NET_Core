@@ -1,4 +1,8 @@
 
+using CA02_ASP.NET_Core.Data.Entity;
+using CA02_ASP.NET_Core.Data.Services;
+using CA02_ASP.NET_Core.Data;
+
 namespace CA02_ASP.NET_Core
 {
     public class Program
@@ -13,6 +17,21 @@ namespace CA02_ASP.NET_Core
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+
+
+
+
+            TypeAdapterConfig<BookDTO, BookEntity>.NewConfig().Ignore("id");
+            TypeAdapterConfig<RentalDTO, RentalEntity>.NewConfig().Ignore("id");
+            TypeAdapterConfig<UserDTO, UserDTO>.NewConfig().Ignore("id");
+
+            builder.Services.AddDbContext<Context>(options => options.UseMySQL(builder.Configuration.GetConnectionString("dbConnection")));
+            builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
+
+
+
+
 
             var app = builder.Build();
 
