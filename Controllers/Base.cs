@@ -1,16 +1,18 @@
 ﻿using CA02_ASP.NET_Core.Data.DTO;
 using CA02_ASP.NET_Core.Data.Entity;
 using CA02_ASP.NET_Core.Data.Services;
+
 using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CA02_ASP.NET_Core.Controllers
+
 {
 
     public class CustomControllerBase<EntityType, DTOType> : ControllerBase
-        where EntityType : class
-        where DTOType : class
+       where EntityType : class
+       where DTOType : class
     {
         readonly IGenericService<EntityType> _service;
         public CustomControllerBase(IGenericService<EntityType> service)
@@ -55,5 +57,6 @@ namespace CA02_ASP.NET_Core.Controllers
             return NoContent();
         }
     }
+
 
 }

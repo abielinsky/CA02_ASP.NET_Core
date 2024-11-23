@@ -4,7 +4,6 @@ using CA02_ASP.NET_Core.Data.Entity;
 using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
 namespace CA02_ASP.NET_Core.Controllers
 
 {
