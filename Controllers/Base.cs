@@ -34,6 +34,7 @@ namespace CA02_ASP.NET_Core.Controllers
             var result = await _service.GetByIdAsync(id);
             return Ok(result.Adapt<EntityType>());
         }
+
         [HttpPost]
         public virtual async Task<IActionResult> NewItem(DTOType book)
         {
