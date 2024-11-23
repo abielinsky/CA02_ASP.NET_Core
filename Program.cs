@@ -23,20 +23,12 @@ namespace CA02_ASP.NET_Core
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-
-
-
-
             TypeAdapterConfig<BookDTO, BookEntity>.NewConfig().Ignore("id");
             TypeAdapterConfig<RentalDTO, RentalEntity>.NewConfig().Ignore("id");
             TypeAdapterConfig<UserDTO, UserDTO>.NewConfig().Ignore("id");
 
             builder.Services.AddDbContext<Context>(options => options.UseMySQL(builder.Configuration.GetConnectionString("dbConnection")));
             builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
-
-
-
-
 
             var app = builder.Build();
 

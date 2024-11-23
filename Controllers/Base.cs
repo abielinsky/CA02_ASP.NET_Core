@@ -14,7 +14,7 @@ namespace CA02_ASP.NET_Core.Controllers
        where EntityType : class
        where DTOType : class
     {
-        readonly IGenericService<EntityType> _service;
+        public readonly IGenericService<EntityType> _service;
         public CustomControllerBase(IGenericService<EntityType> service)
         {
             _service = service;
@@ -57,6 +57,15 @@ namespace CA02_ASP.NET_Core.Controllers
                 return Ok($"Rows affected: {result}");
             return NoContent();
         }
+
+        [HttpDelete]
+        public virtual async Task<IActionResult> DeleteItem(int id)
+        {
+            var result = await _service.DeleteByIdAsync(id);
+            if (result > 0)
+                return Ok($"Rows affected: {result}");
+            return NoContent();
+        }   
     }
 
 

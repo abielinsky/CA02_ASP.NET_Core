@@ -16,6 +16,22 @@ namespace CA02_ASP.NET_Core.Controllers
         public BooksController(IGenericService<BookEntity> service) : base(service)
         {
         }
+
+        [HttpGet("search")]
+        public async Task<IActionResult> GetBooksByName(string Name)
+        {
+            var books = await _service.GetAllAsync(x => x.title.Contains(Name), null, "Rentals");
+
+            //var response = books.Select(x => new BookDTO
+            //{
+            //    title = x.title,
+            //    author = x.author,
+            //    isbn = x.isbn,
+            //    copies_available = x.copies_available
+            //}).ToList();
+            var response = books.Adapt<List<BookDTO>>();
+            return Ok(response);
+        }
     }
 
 
