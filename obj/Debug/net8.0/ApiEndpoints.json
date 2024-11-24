@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "CA02_ASP.NET_Core.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "CA02_ASP.NET_Core.Controllers.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CA02_ASP.NET_Core.Controllers.CustomControllerBase\u00602[[CA02_ASP.NET_Core.Data.Entity.BookEntity, CA02_ASP.NET_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[CA02_ASP.NET_Core.Data.DTO.BookDTO, CA02_ASP.NET_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
     "Method": "GetAll",
     "RelativePath": "api/Books",

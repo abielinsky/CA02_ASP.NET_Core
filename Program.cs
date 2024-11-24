@@ -8,6 +8,12 @@ using Mapster;
 using Microsoft.EntityFrameworkCore;
 using System;
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
+
+
 namespace CA02_ASP.NET_Core
 {
     public class Program
@@ -23,12 +29,46 @@ namespace CA02_ASP.NET_Core
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+
+            //
             TypeAdapterConfig<BookDTO, BookEntity>.NewConfig().Ignore("id");
             TypeAdapterConfig<RentalDTO, RentalEntity>.NewConfig().Ignore("id");
             TypeAdapterConfig<UserDTO, UserDTO>.NewConfig().Ignore("id");
 
             builder.Services.AddDbContext<Context>(options => options.UseMySQL(builder.Configuration.GetConnectionString("dbConnection")));
             builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
+
+
+
+            // Add JWT Authentication
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                };
+            });
+
+            builder.Services.AddAuthorization();
+
+
+
+
+
+
+
+
+
 
             var app = builder.Build();
 
@@ -40,12 +80,8 @@ namespace CA02_ASP.NET_Core
             }
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
-
             app.Run();
         }
     }

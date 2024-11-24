@@ -2,13 +2,14 @@
 using CA02_ASP.NET_Core.Data.Entity;
 using CA02_ASP.NET_Core.Data.Services;
 using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 namespace CA02_ASP.NET_Core.Controllers
 
 {
 
-
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BooksController : CustomControllerBase<BookEntity, BookDTO>
