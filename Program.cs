@@ -18,6 +18,7 @@ namespace CA02_ASP.NET_Core
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -86,5 +87,7 @@ namespace CA02_ASP.NET_Core
             app.MapControllers();
             app.Run();
         }
+
+
     }
 }
