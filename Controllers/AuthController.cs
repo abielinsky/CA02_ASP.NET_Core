@@ -7,6 +7,10 @@ using CA02_ASP.NET_Core.Data.Entity;
 using CA02_ASP.NET_Core.Data;
 using BCrypt.Net;
 using Org.BouncyCastle.Crypto.Generators;
+using CA02_ASP.NET_Core.Controllers;
+using CA02_ASP.NET_Core.Data.DTO;
+using Moq;
+using Xunit;
 
 namespace CA02_ASP.NET_Core.Controllers
 {
