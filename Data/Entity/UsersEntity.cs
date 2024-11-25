@@ -12,6 +12,7 @@ namespace CA02_ASP.NET_Core.Data.Entity
         public string email { get; set; }
         public string phone { get; set; }
         public DateTime created_at { get; set; }
+        public string password_hash { get; set; } //for authentication
     }
 
 }

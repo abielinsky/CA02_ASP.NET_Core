@@ -5,11 +5,11 @@ using System.Security.Claims;
 using System.Text;
 using CA02_ASP.NET_Core.Data.Entity;
 using CA02_ASP.NET_Core.Data;
+using BCrypt.Net;
+using Org.BouncyCastle.Crypto.Generators;
 
 namespace CA02_ASP.NET_Core.Controllers
 {
-
-
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -23,18 +23,28 @@ namespace CA02_ASP.NET_Core.Controllers
             _context = context;
         }
 
+        // Login Endpoint
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginDTO login)
         {
-            var user = _context.Users.FirstOrDefault(u => u.email == login.Email && u.phone == login.Phone);
+            // Find user by email
+            var user = _context.Users.FirstOrDefault(u => u.email == login.Email);
 
             if (user == null)
             {
-                return Unauthorized("Invalid credentials");
+                return Unauthorized("Invalid login attempt");
             }
 
-            var token = GenerateJwtToken(user);
+            // Correct password validation using BCrypt
+            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(login.Password, user.password_hash);
 
+            if (!isPasswordValid)
+            {
+                return Unauthorized("Invalid login attempt");
+            }
+
+            // Generate JWT token
+            var token = GenerateJwtToken(user);
             return Ok(new { Token = token });
         }
 
@@ -61,11 +71,10 @@ namespace CA02_ASP.NET_Core.Controllers
         }
     }
 
+    // DTO for Login
     public class LoginDTO
     {
         public string Email { get; set; }
-        public string Phone { get; set; }
+        public string Password { get; set; }
     }
-
-
 }

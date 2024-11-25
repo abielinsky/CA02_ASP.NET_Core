@@ -41,6 +41,8 @@ namespace CA02_ASP.NET_Core
 
 
             // Add JWT Authentication
+
+
             builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

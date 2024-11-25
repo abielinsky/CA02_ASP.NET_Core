@@ -12,6 +12,7 @@ namespace CA02_ASP.NET_Core.Data
         public DbSet<BookEntity> Books { get; set; }
         public DbSet<RentalEntity> Rentals { get; set; }
         public DbSet<UsersEntity> Users { get; set; }
+        
     }
 
 

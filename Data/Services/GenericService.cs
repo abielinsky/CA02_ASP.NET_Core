@@ -70,6 +70,9 @@ namespace CA02_ASP.NET_Core.Data.Services
 
             return await query.ToListAsync();
         }
+
+       
+
     }
 
 }
