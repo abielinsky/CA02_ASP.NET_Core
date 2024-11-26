@@ -39,10 +39,8 @@ namespace CA02_ASP.NET_Core.Controllers
                 return Unauthorized("Invalid login attempt");
             }
 
-            // Correct password validation using BCrypt
-            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(login.Password, user.password_hash);
-
-            if (!isPasswordValid)
+            // Plain password validation (NO HASHING)
+            if (user.password_hash != login.Password)
             {
                 return Unauthorized("Invalid login attempt");
             }
@@ -52,28 +50,55 @@ namespace CA02_ASP.NET_Core.Controllers
             return Ok(new { Token = token });
         }
 
+
+
+
+
+
+
         private string GenerateJwtToken(UsersEntity user)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            // Retrieve and validate configuration values
+            var key = _configuration["Jwt:Key"];
+            var issuer = _configuration["Jwt:Issuer"];
+            var audience = _configuration["Jwt:Audience"];
+            var expiryInMinutes = _configuration["Jwt:TokenExpiryInMinutes"];
+
+            if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(issuer) || string.IsNullOrEmpty(audience) || string.IsNullOrEmpty(expiryInMinutes))
+            {
+                throw new InvalidOperationException("JWT configuration values are missing or invalid.");
+            }
+
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
+            // Add claims
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, user.id.ToString()),
-                new Claim(ClaimTypes.Email, user.email)
-            };
+        new Claim(ClaimTypes.NameIdentifier, user.id.ToString()),
+        new Claim(ClaimTypes.Email, user.email)
+    };
 
+            // Generate token
             var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
+                issuer: issuer,
+                audience: audience,
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["Jwt:TokenExpiryInMinutes"])),
+                expires: DateTime.Now.AddMinutes(Convert.ToDouble(expiryInMinutes)),
                 signingCredentials: credentials
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+
+
+
+
     }
+
+
+
 
     // DTO for Login
     public class LoginDTO

@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>CA02_ASP.NET_Core.Program</StartupObject>
   </PropertyGroup>
 
 	<ItemGroup>
