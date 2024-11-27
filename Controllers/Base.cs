@@ -65,7 +65,7 @@ namespace CA02_ASP.NET_Core.Controllers
             if (result > 0)
                 return Ok($"Rows affected: {result}");
             return NoContent();
-        }   
+        }
     }
 
 

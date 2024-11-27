@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "login",
-        "Type": "CA02_ASP.NET_Core.Controllers.LoginDTO",
+        "Type": "CA02_ASP.NET_Core.Data.Services.LoginDTO",
         "IsRequired": true
       }
     ],
