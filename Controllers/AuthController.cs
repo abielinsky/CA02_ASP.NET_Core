@@ -2,12 +2,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using CA02_ASP.NET_Core.Data.Entity;
-using CA02_ASP.NET_Core.Data;
 using CA02_ASP.NET_Core.Data.Services;
 
 namespace CA02_ASP.NET_Core.Controllers
