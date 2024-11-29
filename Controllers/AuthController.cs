@@ -24,6 +24,8 @@ namespace CA02_ASP.NET_Core.Controllers
 
             return Ok(new { Token = result });
         }
+
+   
     }
 
 }
