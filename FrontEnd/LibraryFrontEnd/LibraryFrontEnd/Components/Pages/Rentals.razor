@@ -9,6 +9,44 @@
 
 <h3>Rentals</h3>
 
-@code {
+@if (rentals == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rental ID</th>
+                <th>User ID</th>
+                <th>Book ID</th>
+                <th>Rental Date</th>
+                <th>Return Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rental in rentals)
+            {
+                <tr>
+                    <td>@rental.RentalId</td>
+                    <td>@rental.UserId</td>
+                    <td>@rental.BookId</td>
+                    <td>@rental.RentalDate.ToShortDateString()</td>
+                    <td>@(rental.ReturnDate?.ToShortDateString() ?? "Not Returned")</td>
+                    <td>@rental.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
+@code {
+    private List<Rental> rentals;
+
+    protected override async Task OnInitializedAsync()
+    {
+        rentals = await LibraryService.GetAllRentalsAsync();
+    }
 }
