@@ -2,6 +2,7 @@
 using CA02_ASP.NET_Core.Data.Entity;
 using CA02_ASP.NET_Core.Data.Services;
 using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -10,7 +11,7 @@ namespace CA02_ASP.NET_Core.Controllers
 
 {
 
-    [Route("api/[controller]")]
+    [Route("api/[controller]"), Authorize]
     [ApiController]
     public class RentalsController : CustomControllerBase<RentalEntity, RentalDTO>
     {
@@ -37,7 +38,7 @@ namespace CA02_ASP.NET_Core.Controllers
             return NoContent();
         }
         [HttpGet("test")]
-        public async Task<IActionResult> Get_test()        
+        public async Task<IActionResult> Get_test()
         {
             var result = await _service.GetAllAsync(null, null, "Books");
             if (result.Count > 0)
