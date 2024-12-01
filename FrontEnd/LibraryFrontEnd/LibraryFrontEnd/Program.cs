@@ -1,4 +1,5 @@
 using LibraryFrontEnd.Components;
+using LibraryFrontEnd.Services;
 
 namespace LibraryFrontEnd
 {
@@ -11,6 +12,9 @@ namespace LibraryFrontEnd
             // Add services to the container.
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
+
+            // Library Management Service
+            builder.Services.AddScoped<LibraryService>();
 
             var app = builder.Build();
 
