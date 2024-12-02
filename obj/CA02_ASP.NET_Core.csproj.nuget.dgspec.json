@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core.csproj": {}
+    "F:\\00_COLLEGE_DKI_SOFTWARE_DEVELOPMENT\\28_SERVICE_ORIENTED_ARCHITECTURE\\000-CA_02\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core.csproj": {
+    "F:\\00_COLLEGE_DKI_SOFTWARE_DEVELOPMENT\\28_SERVICE_ORIENTED_ARCHITECTURE\\000-CA_02\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core.csproj",
+        "projectUniqueName": "F:\\00_COLLEGE_DKI_SOFTWARE_DEVELOPMENT\\28_SERVICE_ORIENTED_ARCHITECTURE\\000-CA_02\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core.csproj",
         "projectName": "CA02_ASP.NET_Core",
-        "projectPath": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core.csproj",
-        "packagesPath": "C:\\Users\\Matty\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\obj\\",
+        "projectPath": "F:\\00_COLLEGE_DKI_SOFTWARE_DEVELOPMENT\\28_SERVICE_ORIENTED_ARCHITECTURE\\000-CA_02\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core.csproj",
+        "packagesPath": "C:\\Users\\abiel\\.nuget\\packages\\",
+        "outputPath": "F:\\00_COLLEGE_DKI_SOFTWARE_DEVELOPMENT\\28_SERVICE_ORIENTED_ARCHITECTURE\\000-CA_02\\CA02_ASP.NET_Core\\CA02_ASP.NET_Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Matty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abiel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
