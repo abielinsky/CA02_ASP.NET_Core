@@ -89,6 +89,17 @@ namespace CA02_ASP.NET_Core
                 app.UseSwaggerUI();
             }
 
+            // Add CORS Policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
             app.UseHttpsRedirection();
 
             app.UseAuthentication();
