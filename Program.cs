@@ -80,14 +80,6 @@ namespace CA02_ASP.NET_Core
             builder.Services.AddAuthorization();
             #endregion
 
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
 
             // Add CORS Policy
 builder.Services.AddCors(options =>
@@ -99,6 +91,23 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
+
+
+                
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+
+// Use CORS Policy
+app.UseCors("AllowAll");
+
+            
 
             app.UseHttpsRedirection();
 
