@@ -17,6 +17,12 @@ namespace CA02_ASP.NET_Core.Controllers
         [HttpGet("search")]
         public async Task<IActionResult> GetBooksByName(string Name)
         {
+            var apiKey = Request.Headers["APIKey"];
+            if (string.IsNullOrEmpty(apiKey) || apiKey != "SuperSecretApiKey12345")
+            {
+                return Unauthorized("Invalid API key");
+            }
+
             var books = await _service.GetAllAsync(x => x.title.Contains(Name), null, "Rentals");
 
             //var response = books.Select(x => new BookDTO
