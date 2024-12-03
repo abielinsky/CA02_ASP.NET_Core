@@ -14,6 +14,7 @@ using System.Text;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using CA02_ASP.NET_Core.Middleware;
 
 namespace CA02_ASP.NET_Core
 {
@@ -100,6 +101,9 @@ builder.Services.AddCors(options =>
 
                 
             var app = builder.Build();
+
+            // API Key Middleware for validating each request
+            app.UseMiddleware<ApiKeyMiddleware>();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
