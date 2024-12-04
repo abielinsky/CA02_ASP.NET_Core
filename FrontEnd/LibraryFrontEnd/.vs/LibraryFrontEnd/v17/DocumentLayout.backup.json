@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|c:\\users\\matty\\documents\\college notes \u0026 assignments\\year 4\\service orientated architecture\\ca02_asp.net_core\\frontend\\libraryfrontend\\libraryfrontend\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|solutionrelative:libraryfrontend\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|c:\\users\\matty\\documents\\college notes \u0026 assignments\\year 4\\service orientated architecture\\ca02_asp.net_core\\frontend\\libraryfrontend\\libraryfrontend\\components\\pages\\rentals.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|solutionrelative:libraryfrontend\\components\\pages\\rentals.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|c:\\users\\matty\\documents\\college notes \u0026 assignments\\year 4\\service orientated architecture\\ca02_asp.net_core\\frontend\\libraryfrontend\\libraryfrontend\\components\\pages\\books.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|solutionrelative:libraryfrontend\\components\\pages\\books.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|c:\\users\\matty\\documents\\college notes \u0026 assignments\\year 4\\service orientated architecture\\ca02_asp.net_core\\frontend\\libraryfrontend\\libraryfrontend\\components\\pages\\users.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|solutionrelative:libraryfrontend\\components\\pages\\users.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|c:\\users\\matty\\documents\\college notes \u0026 assignments\\year 4\\service orientated architecture\\ca02_asp.net_core\\frontend\\libraryfrontend\\libraryfrontend\\components\\pages\\books.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|solutionrelative:libraryfrontend\\components\\pages\\books.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|c:\\users\\matty\\documents\\college notes \u0026 assignments\\year 4\\service orientated architecture\\ca02_asp.net_core\\frontend\\libraryfrontend\\libraryfrontend\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|solutionrelative:libraryfrontend\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|c:\\users\\matty\\documents\\college notes \u0026 assignments\\year 4\\service orientated architecture\\ca02_asp.net_core\\frontend\\libraryfrontend\\libraryfrontend\\components\\pages\\rentals.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|solutionrelative:libraryfrontend\\components\\pages\\rentals.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C2A69196-29A3-4614-915F-4CE89B2AF394}|LibraryFrontEnd\\LibraryFrontEnd.csproj|c:\\users\\matty\\documents\\college notes \u0026 assignments\\year 4\\service orientated architecture\\ca02_asp.net_core\\frontend\\libraryfrontend\\libraryfrontend\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -83,13 +83,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Books.razor",
               "DocumentMoniker": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\Components\\Pages\\Books.razor",
               "RelativeDocumentMoniker": "LibraryFrontEnd\\Components\\Pages\\Books.razor",
-              "ToolTip": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\Components\\Pages\\Books.razor*",
-              "RelativeToolTip": "LibraryFrontEnd\\Components\\Pages\\Books.razor*",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEkAAAATAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\Components\\Pages\\Books.razor",
+              "RelativeToolTip": "LibraryFrontEnd\\Components\\Pages\\Books.razor",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEwAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-04T15:48:34.279Z",
               "EditorCaption": ""
@@ -102,33 +102,33 @@
               "RelativeDocumentMoniker": "LibraryFrontEnd\\Components\\Pages\\Home.razor",
               "ToolTip": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "LibraryFrontEnd\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADgAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-04T12:57:28.644Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Rentals.razor",
               "DocumentMoniker": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\Components\\Pages\\Rentals.razor",
               "RelativeDocumentMoniker": "LibraryFrontEnd\\Components\\Pages\\Rentals.razor",
               "ToolTip": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\Components\\Pages\\Rentals.razor",
               "RelativeToolTip": "LibraryFrontEnd\\Components\\Pages\\Rentals.razor",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEsAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAE4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-04T15:50:09.726Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Login.razor",
               "DocumentMoniker": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\Components\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "LibraryFrontEnd\\Components\\Pages\\Login.razor",
               "ToolTip": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\Components\\Pages\\Login.razor",
               "RelativeToolTip": "LibraryFrontEnd\\Components\\Pages\\Login.razor",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADwAAABeAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAD4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-04T03:21:53.354Z",
               "EditorCaption": ""
@@ -147,13 +147,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Users.razor",
               "DocumentMoniker": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\Components\\Pages\\Users.razor",
               "RelativeDocumentMoniker": "LibraryFrontEnd\\Components\\Pages\\Users.razor",
               "ToolTip": "C:\\Users\\Matty\\Documents\\College Notes \u0026 Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\Components\\Pages\\Users.razor",
               "RelativeToolTip": "LibraryFrontEnd\\Components\\Pages\\Users.razor",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEYAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEoAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-04T15:42:39.331Z",
               "EditorCaption": ""
