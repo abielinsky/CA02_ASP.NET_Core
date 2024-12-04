@@ -16,6 +16,8 @@
 <h3>Login to your account</h3>
 
 <EditForm Model="@loginModel" OnValidSubmit="HandleLogin">
+    <!-- login validation component -->
+    <!-- https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs-->
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -54,7 +56,11 @@
     {
         try
         {
+            // Localhost Server
             var response = await Http.PostAsJsonAsync("https://localhost:7284/api/Auth/login", loginModel);
+
+            // Deployed Azure Server
+            // var response = await Http.PostAsJsonAsync("https://libraryca2app.azurewebsites.net/api/Auth/login", loginModel);
 
             if (response.IsSuccessStatusCode)
             {

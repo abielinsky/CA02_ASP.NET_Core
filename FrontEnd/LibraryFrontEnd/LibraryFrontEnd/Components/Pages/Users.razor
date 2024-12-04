@@ -68,7 +68,12 @@ else
                 // Add the JWT token to the Authorization header for authentication
                 Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
 
+                // Localhost Server
                 var response = await Http.GetAsync("https://localhost:7284/api/Users");
+
+                // Deployed Azure Server
+                // var response = await Http.GetAsync("https://libraryca2app.azurewebsites.net/api/Users");
+
 
                 if (response.IsSuccessStatusCode)
                 {
