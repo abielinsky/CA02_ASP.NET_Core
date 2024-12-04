@@ -6,6 +6,7 @@ namespace LibraryFrontEnd.Models
 {
     public class Book
     {
+        public required int id { get; set; }
         public required string title { get; set; }
         public required string author { get; set; }
         public required string isbn { get; set; }
