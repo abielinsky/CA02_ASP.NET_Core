@@ -1,0 +1,92 @@
+﻿@using Blazored.LocalStorage
+@using System.Text.Json;
+
+@page "/users"
+@inject HttpClient Http
+@inject ILocalStorageService LocalStorage
+@inject NavigationManager Navigation
+
+<PageTitle>Books</PageTitle>
+
+<h3>Users List</h3>
+
+@if (isLoading)
+{
+    <p>Loading users...</p>
+}
+else if (!isAuthenticated)
+{
+    <p>Redirecting to login...</p>
+}
+else if (users != null && users.Any())
+{
+    <ul>
+        @foreach (var user in users)
+        {
+            <li>@user.Email</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No users available or failed to load.</p>
+}
+
+@code {
+    private List<User>? users;
+    private bool isLoading = true;
+    private bool isAuthenticated = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var jwtToken = await LocalStorage.GetItemAsync<string>("jwtToken");
+
+            if (!string.IsNullOrEmpty(jwtToken))
+            {
+                // Add the JWT token to the Authorization header for authentication
+                Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
+
+                var response = await Http.GetAsync("https://localhost:7284/api/Users");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Deserialize the JSON response into a list of users
+                    users = await response.Content.ReadFromJsonAsync<List<User>>();
+                    isAuthenticated = true; // Successfully fetched users, user is authenticated
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    // Invalid token or user unauthorized
+                    RedirectToLogin();
+                }
+                else
+                {
+                    Console.WriteLine("Error: Unable to fetch users.");
+                }
+            }
+            else
+            {
+                // JWT token is missing, redirect to login
+                RedirectToLogin();
+            }
+
+            // Set loading to false and trigger a re-render
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private void RedirectToLogin()
+    {
+        isAuthenticated = false;
+        Navigation.NavigateTo("/login", true);
+    }
+
+    public class User
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+    }
+}
