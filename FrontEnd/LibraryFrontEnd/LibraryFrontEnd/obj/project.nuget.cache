@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "+v6cG8aurxw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\LibraryFrontEnd.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Matty\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

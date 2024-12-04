@@ -1,5 +1,55 @@
-﻿<h3>Books</h3>
+﻿<!-- SOA CA2 - Matthew & Abiel -->
+<!-- Front-end App -->
+<!-- Books Page -->
+
+@page "/books"
+@inject LibraryApp.Services.ApiService ApiService
+
+<h3>Books</h3>
+
+@if (books == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Copies Available</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in books)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.ISBN</td>
+                    <td>@book.CopiesAvailable</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 @code {
+    private List<Book> books;
 
+    protected override async Task OnInitializedAsync()
+    {
+        books = await ApiService.GetAsync<Book>("api/Books");
+    }
+
+    public class Book
+    {
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public string ISBN { get; set; }
+        public int CopiesAvailable { get; set; }
+    }
 }
+

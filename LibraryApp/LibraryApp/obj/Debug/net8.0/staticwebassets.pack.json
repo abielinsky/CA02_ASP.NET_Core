@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\LibraryApp\\LibraryApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LibraryApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\LibraryApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\LibraryApp\\LibraryApp\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\LibraryApp\\LibraryApp\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\LibraryApp\\LibraryApp\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\LibraryApp\\LibraryApp\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LibraryApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.LibraryApp.props",
+      "PackagePath": "build\\LibraryApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.LibraryApp.props",
+      "PackagePath": "buildMultiTargeting\\LibraryApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.LibraryApp.props",
+      "PackagePath": "buildTransitive\\LibraryApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
