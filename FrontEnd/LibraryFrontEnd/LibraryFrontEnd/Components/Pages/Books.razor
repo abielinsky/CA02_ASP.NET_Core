@@ -1,4 +1,9 @@
-﻿@using Blazored.LocalStorage
+﻿﻿<!-- Abiel & Matthew SD4 Service Orientated Architecture CA2 -->
+<!-- Front End -->
+<!-- Books Page -->
+
+@using Blazored.LocalStorage
+@using LibraryFrontEnd.Models
 @using System.Text.Json;
 
 @page "/books"
@@ -20,12 +25,27 @@ else if (!isAuthenticated)
 }
 else if (books != null && books.Any())
 {
-    <ul>
-        @foreach (var book in books)
-        {
-            <li>@book.Title</li>
-        }
-    </ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Copies Available</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in books)
+            {
+                <tr>
+                    <td>@book.title</td>
+                    <td>@book.author</td>
+                    <td>@book.isbn</td>
+                    <td>@book.copies_available</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 else
 {
@@ -82,12 +102,5 @@ else
     {
         isAuthenticated = false;
         Navigation.NavigateTo("/login", true);
-    }
-
-    public class Book
-    {
-        public required string Title { get; set; }
-        public required string Author { get; set; }
-        public required string ISBN { get; set; }
     }
 }

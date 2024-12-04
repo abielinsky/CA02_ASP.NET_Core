@@ -1,4 +1,9 @@
-﻿@using Blazored.LocalStorage
+﻿﻿<!-- Abiel & Matthew SD4 Service Orientated Architecture CA2 -->
+<!-- Front End -->
+<!-- Rentals Page -->
+
+@using Blazored.LocalStorage
+@using LibraryFrontEnd.Models
 @using System.Text.Json;
 
 @page "/rentals"
@@ -20,12 +25,21 @@ else if (!isAuthenticated)
 }
 else if (rentals != null && rentals.Any())
 {
-    <ul>
-        @foreach (var rental in rentals)
-        {
-            <li>@rental.rental_date </li>
-        }
-    </ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Rental Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rental in rentals)
+            {
+                <tr>
+                    <td>@rental.rental_date</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 else
 {
@@ -82,21 +96,6 @@ else
     {
         isAuthenticated = false;
         Navigation.NavigateTo("/login", true);
-    }
-
-    public class Rental
-    {
-        public DateTime rental_date { get; set; }
-    }
-
-    public class User
-    {
-        public string Name { get; set; }
-    }
-
-    public class Book
-    {
-        public string Title { get; set; }
     }
 }
 

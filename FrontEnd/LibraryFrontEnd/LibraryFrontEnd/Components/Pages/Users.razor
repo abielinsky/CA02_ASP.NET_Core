@@ -1,4 +1,9 @@
-﻿@using Blazored.LocalStorage
+﻿﻿<!-- Abiel & Matthew SD4 Service Orientated Architecture CA2 -->
+<!-- Front End -->
+<!-- Users Page -->
+
+@using Blazored.LocalStorage
+@using LibraryFrontEnd.Models
 @using System.Text.Json;
 
 @page "/users"
@@ -20,12 +25,27 @@ else if (!isAuthenticated)
 }
 else if (users != null && users.Any())
 {
-    <ul>
-        @foreach (var user in users)
-        {
-            <li>@user.Email</li>
-        }
-    </ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Data Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in users)
+            {
+                <tr>
+                    <td>@user.name</td>
+                    <td>@user.email</td>
+                    <td>@user.phone</td>
+                    <td>@user.created_at</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 else
 {
@@ -82,11 +102,5 @@ else
     {
         isAuthenticated = false;
         Navigation.NavigateTo("/login", true);
-    }
-
-    public class User
-    {
-        public string Name { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
     }
 }
