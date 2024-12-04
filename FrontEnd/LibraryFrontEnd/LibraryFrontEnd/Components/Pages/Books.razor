@@ -1,0 +1,48 @@
+﻿<!-- Abiel & Matthew SD4 Service Orientated Architecture CA2 -->
+<!-- Front End -->
+<!-- Books Page -->
+
+@page "/books"
+
+@using LibraryFrontEnd.Services
+@inject LibraryService LibraryService
+
+<h3>Books</h3>
+
+@if (books == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Copies Available</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in books)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.ISBN</td>
+                    <td>@book.CopiesAvailable</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Book> books;
+
+    protected override async Task OnInitializedAsync()
+    {
+        books = await LibraryService.GetAllBooksAsync();
+    }
+}
