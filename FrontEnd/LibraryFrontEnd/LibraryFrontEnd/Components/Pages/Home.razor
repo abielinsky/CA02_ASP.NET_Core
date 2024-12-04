@@ -10,7 +10,15 @@
 
 <h3>Books List</h3>
 
-@if (books != null)
+@if (isLoading)
+{
+    <p>Loading books...</p>
+}
+else if (!isAuthenticated)
+{
+    <p>Redirecting to login...</p>
+}
+else if (books != null && books.Any())
 {
     <ul>
         @foreach (var book in books)
@@ -21,46 +29,65 @@
 }
 else
 {
-    <p>Loading books...</p>
+    <p>No books available or failed to load.</p>
 }
 
 @code {
-    private List<Book> books;
+    private List<Book>? books;
+    private bool isLoading = true;
+    private bool isAuthenticated = false;
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        // Try to get JWT Token from local storage for authentication
-        var jwtToken = await LocalStorage.GetItemAsync<string>("jwtToken");
-
-        if (!string.IsNullOrEmpty(jwtToken))
+        if (firstRender)
         {
-            // Add the JWT token to the Authorization header for authentication
-            Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
+            var jwtToken = await LocalStorage.GetItemAsync<string>("jwtToken");
 
-            var response = await Http.GetAsync("https://localhost:7284/api/Books");
-
-            if (response.IsSuccessStatusCode)
+            if (!string.IsNullOrEmpty(jwtToken))
             {
-                // Deserialize the JSON response into a list of books
-                books = await response.Content.ReadFromJsonAsync<List<Book>>();
+                // Add the JWT token to the Authorization header for authentication
+                Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
+
+                var response = await Http.GetAsync("https://localhost:7284/api/Books");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Deserialize the JSON response into a list of books
+                    books = await response.Content.ReadFromJsonAsync<List<Book>>();
+                    isAuthenticated = true; // Successfully fetched books, user is authenticated
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    // Invalid token or user unauthorized
+                    RedirectToLogin();
+                }
+                else
+                {
+                    Console.WriteLine("Error: Unable to fetch books.");
+                }
             }
             else
             {
-                // Handle unsuccessful API call (e.g., show error message)
-                Console.WriteLine("Error: Unable to fetch books.");
+                // JWT token is missing, redirect to login
+                RedirectToLogin();
             }
+
+            // Set loading to false and trigger a re-render
+            isLoading = false;
+            StateHasChanged();
         }
-        else
-        {
-            // Handle missing JWT token (redirect to login page)
-            Navigation.NavigateTo("/login");
-        }
+    }
+
+    private void RedirectToLogin()
+    {
+        isAuthenticated = false;
+        Navigation.NavigateTo("/login", true);
     }
 
     public class Book
     {
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public string ISBN { get; set; }
+        public required string Title { get; set; } 
+        public required string Author { get; set; }
+        public required string ISBN { get; set; }
     }
 }

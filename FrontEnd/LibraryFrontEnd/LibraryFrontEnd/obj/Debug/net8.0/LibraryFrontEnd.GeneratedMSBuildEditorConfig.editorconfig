@@ -22,10 +22,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Matty/Documents/College Notes & Assignments/Year 4/Service Orientated Architecture/CA02_ASP.NET_Core/FrontEnd/LibraryFrontEnd/LibraryFrontEnd/Components/Pages/Books.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29rcy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Matty/Documents/College Notes & Assignments/Year 4/Service Orientated Architecture/CA02_ASP.NET_Core/FrontEnd/LibraryFrontEnd/LibraryFrontEnd/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,14 +36,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Matty/Documents/College Notes & Assignments/Year 4/Service Orientated Architecture/CA02_ASP.NET_Core/FrontEnd/LibraryFrontEnd/LibraryFrontEnd/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Matty/Documents/College Notes & Assignments/Year 4/Service Orientated Architecture/CA02_ASP.NET_Core/FrontEnd/LibraryFrontEnd/LibraryFrontEnd/Components/Pages/Rentals.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZW50YWxzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Matty/Documents/College Notes & Assignments/Year 4/Service Orientated Architecture/CA02_ASP.NET_Core/FrontEnd/LibraryFrontEnd/LibraryFrontEnd/Components/Pages/Users.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Matty/Documents/College Notes & Assignments/Year 4/Service Orientated Architecture/CA02_ASP.NET_Core/FrontEnd/LibraryFrontEnd/LibraryFrontEnd/Components/Pages/Weather.razor]

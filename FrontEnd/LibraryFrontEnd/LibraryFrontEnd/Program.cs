@@ -1,6 +1,6 @@
 using Blazored.LocalStorage;
 using LibraryFrontEnd.Components;
-using LibraryFrontEnd.Services;
+// using LibraryFrontEnd.Services;
 
 namespace LibraryFrontEnd
 {
@@ -18,6 +18,8 @@ namespace LibraryFrontEnd
             // builder.Services.AddScoped<LibraryService>();
 
             builder.Services.AddBlazoredLocalStorage();
+
+            builder.Services.AddHttpClient();
 
             var app = builder.Build();
 
