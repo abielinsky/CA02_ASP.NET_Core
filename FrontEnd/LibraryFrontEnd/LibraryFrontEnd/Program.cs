@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using LibraryFrontEnd.Components;
 using LibraryFrontEnd.Services;
 
@@ -14,7 +15,9 @@ namespace LibraryFrontEnd
                 .AddInteractiveServerComponents();
 
             // Library Management Service
-            builder.Services.AddScoped<LibraryService>();
+            // builder.Services.AddScoped<LibraryService>();
+
+            builder.Services.AddBlazoredLocalStorage();
 
             var app = builder.Build();
 

@@ -1,0 +1,72 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+@using Blazored.LocalStorage
+
+@page "/login"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject ILocalStorageService LocalStorage
+
+
+
+<PageTitle>Login</PageTitle>
+
+<h3>Login to your account</h3>
+
+<EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label for="email">Email:</label>
+        <InputText id="email" @bind-Value="loginModel.Email" class="form-control" />
+    </div>
+
+    <div>
+        <label for="password">Password:</label>
+        <InputPassword id="password" @bind-Value="loginModel.Password" class="form-control" />
+    </div>
+
+    <div>
+        <span class="text-danger">@errorMessage</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</EditForm>
+
+@code {
+    private LoginModel loginModel = new LoginModel();
+    private string errorMessage = string.Empty;
+
+    public class LoginModel
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+
+    private async Task HandleLogin()
+    {
+        var response = await Http.PostAsJsonAsync("https://localhost:7284/api/Auth/login", loginModel);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponse>();
+            if (loginResponse != null)
+            {
+                // Store the JWT token in local storage
+                await LocalStorage.SetItemAsync("jwtToken", loginResponse.Token);
+
+                // Redirect to the home page or another protected page
+                Navigation.NavigateTo("/home");
+            }
+        }
+        else
+        {
+            errorMessage = "Invalid credentials, please try again.";
+        }
+    }
+
+    public class LoginResponse
+    {
+        public string Token { get; set; }
+    }
+}

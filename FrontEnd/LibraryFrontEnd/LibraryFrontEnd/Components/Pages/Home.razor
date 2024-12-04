@@ -1,7 +1,66 @@
-﻿@page "/"
+﻿@using Blazored.LocalStorage
+@using System.Text.Json;
 
-<PageTitle>Home</PageTitle>
+@page "/"
+@inject HttpClient Http
+@inject ILocalStorageService LocalStorage
+@inject NavigationManager Navigation
 
-<h1>Hello, world!</h1>
+<PageTitle>Books</PageTitle>
 
-Welcome to your new app.
+<h3>Books List</h3>
+
+@if (books != null)
+{
+    <ul>
+        @foreach (var book in books)
+        {
+            <li>@book.Title</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Loading books...</p>
+}
+
+@code {
+    private List<Book> books;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Try to get JWT Token from local storage for authentication
+        var jwtToken = await LocalStorage.GetItemAsync<string>("jwtToken");
+
+        if (!string.IsNullOrEmpty(jwtToken))
+        {
+            // Add the JWT token to the Authorization header for authentication
+            Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
+
+            var response = await Http.GetAsync("https://localhost:7284/api/Books");
+
+            if (response.IsSuccessStatusCode)
+            {
+                // Deserialize the JSON response into a list of books
+                books = await response.Content.ReadFromJsonAsync<List<Book>>();
+            }
+            else
+            {
+                // Handle unsuccessful API call (e.g., show error message)
+                Console.WriteLine("Error: Unable to fetch books.");
+            }
+        }
+        else
+        {
+            // Handle missing JWT token (redirect to login page)
+            Navigation.NavigateTo("/login");
+        }
+    }
+
+    public class Book
+    {
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public string ISBN { get; set; }
+    }
+}

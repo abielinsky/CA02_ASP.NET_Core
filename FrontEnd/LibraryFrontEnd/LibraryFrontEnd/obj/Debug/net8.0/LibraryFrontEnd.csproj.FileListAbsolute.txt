@@ -1,0 +1,7 @@
+C:\Users\Matty\Documents\College Notes & Assignments\Year 4\Service Orientated Architecture\CA02_ASP.NET_Core\FrontEnd\LibraryFrontEnd\LibraryFrontEnd\obj\Debug\net8.0\LibraryFrontEnd.csproj.AssemblyReference.cache
+C:\Users\Matty\Documents\College Notes & Assignments\Year 4\Service Orientated Architecture\CA02_ASP.NET_Core\FrontEnd\LibraryFrontEnd\LibraryFrontEnd\obj\Debug\net8.0\LibraryFrontEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Matty\Documents\College Notes & Assignments\Year 4\Service Orientated Architecture\CA02_ASP.NET_Core\FrontEnd\LibraryFrontEnd\LibraryFrontEnd\obj\Debug\net8.0\LibraryFrontEnd.AssemblyInfoInputs.cache
+C:\Users\Matty\Documents\College Notes & Assignments\Year 4\Service Orientated Architecture\CA02_ASP.NET_Core\FrontEnd\LibraryFrontEnd\LibraryFrontEnd\obj\Debug\net8.0\LibraryFrontEnd.AssemblyInfo.cs
+C:\Users\Matty\Documents\College Notes & Assignments\Year 4\Service Orientated Architecture\CA02_ASP.NET_Core\FrontEnd\LibraryFrontEnd\LibraryFrontEnd\obj\Debug\net8.0\LibraryFrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\Matty\Documents\College Notes & Assignments\Year 4\Service Orientated Architecture\CA02_ASP.NET_Core\FrontEnd\LibraryFrontEnd\LibraryFrontEnd\obj\Debug\net8.0\LibraryFrontEnd.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Matty\Documents\College Notes & Assignments\Year 4\Service Orientated Architecture\CA02_ASP.NET_Core\FrontEnd\LibraryFrontEnd\LibraryFrontEnd\obj\Debug\net8.0\LibraryFrontEnd.sourcelink.json
