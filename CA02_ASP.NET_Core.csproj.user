@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ActiveDebugProfile>https</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>C:\Users\Matty\Documents\College Notes &amp; Assignments\Year 4\Service Orientated Architecture\CA02_ASP.NET_Core\Properties\PublishProfiles\libraryappmgmt - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
-  </PropertyGroup>
-</Project>

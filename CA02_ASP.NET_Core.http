@@ -1,6 +1,0 @@
-@CA02_ASP.NET_Core_HostAddress = http://localhost:5105
-
-GET {{CA02_ASP.NET_Core_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
