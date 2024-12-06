@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XKlhNFD6gPmWgiCjnPsIUlf4YxvU6NXfY2I9iHfWaPU=",
+  "Hash": "2thdkWxnOhBsTgeWdMolqsy6A/74H6A1lmDMPKIJMrA=",
   "Source": "LibraryFrontEnd",
   "BasePath": "_content/LibraryFrontEnd",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\wwwroot\\Video\\background.mp4",
+      "SourceId": "LibraryFrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matty\\Documents\\College Notes & Assignments\\Year 4\\Service Orientated Architecture\\CA02_ASP.NET_Core\\FrontEnd\\LibraryFrontEnd\\LibraryFrontEnd\\wwwroot\\",
+      "BasePath": "_content/LibraryFrontEnd",
+      "RelativePath": "Video/background.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Video\\background.mp4"
     }
   ]
 }

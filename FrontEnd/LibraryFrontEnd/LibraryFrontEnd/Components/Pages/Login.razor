@@ -1,7 +1,6 @@
-﻿﻿<!-- Abiel & Matthew SD4 Service Orientated Architecture CA2 -->
+﻿<!-- Abiel & Matthew SD4 Service Orientated Architecture CA2 -->
 <!-- Front End -->
 <!-- Login Page -->
-
 <!-- Local Storage package for storing JWT token in order to maintain login session -->
 <!-- https://www.c-sharpcorner.com/article/using-localstorage-to-cache-data-in-blazor-applications/ -->
 @using Microsoft.AspNetCore.Components.Forms
@@ -15,30 +14,31 @@
 
 <PageTitle>Login</PageTitle>
 
-<h3>Login to your account</h3>
+<!-- Container for login page -->
+<div class="login-container">
+    <h3 class="login-title">Library Depository</h3>
 
-<EditForm Model="@loginModel" OnValidSubmit="HandleLogin">
-    <!-- login validation component -->
-    <!-- https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs-->
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+    <EditForm Model="@loginModel" OnValidSubmit="HandleLogin">
+        <!-- login validation component -->
+        <!-- https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs-->
+        <DataAnnotationsValidator />
+        <ValidationSummary />
 
-    <div>
-        <label for="email">Email:</label>
-        <InputText id="email" @bind-Value="loginModel.Email" class="form-control" />
-    </div>
+        <div class="input-group">
+            <InputText id="email" @bind-Value="loginModel.Email" class="form-control" placeholder="Enter your email" />
+        </div>
 
-    <div>
-        <label for="password">Password:</label>
-        <InputText id="password" type="password" @bind-Value="loginModel.Password" class="form-control" />
-    </div>
+        <div class="input-group">
+            <InputText id="password" type="password" @bind-Value="loginModel.Password" class="form-control" placeholder="Enter your password" />
+        </div>
 
-    <div>
-        <span class="text-danger">@errorMessage</span>
-    </div>
+        <div class="error-message">
+            <span class="text-danger">@errorMessage</span>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Login</button>
-</EditForm>
+        <button type="submit" class="btn btn-primary login-btn">Login</button>
+    </EditForm>
+</div>
 
 @code {
     private LoginModel loginModel = new LoginModel();
@@ -58,21 +58,14 @@
     {
         try
         {
-            // Localhost Server
             var response = await Http.PostAsJsonAsync("https://localhost:7284/api/Auth/login", loginModel);
-
-            // Deployed Azure Server
-            // var response = await Http.PostAsJsonAsync("https://libraryca2app.azurewebsites.net/api/Auth/login", loginModel);
 
             if (response.IsSuccessStatusCode)
             {
                 var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponse>();
                 if (loginResponse?.Token != null)
                 {
-                    // Store the JWT token in local storage
                     await LocalStorage.SetItemAsync("jwtToken", loginResponse.Token);
-
-                    // Redirect to the home page or another protected page
                     Navigation.NavigateTo("/");
                 }
             }
@@ -92,3 +85,4 @@
         public string Token { get; set; } = string.Empty;
     }
 }
+

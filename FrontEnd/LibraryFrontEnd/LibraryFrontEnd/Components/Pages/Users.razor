@@ -15,7 +15,7 @@
 
 <PageTitle>Books</PageTitle>
 
-<h3>Users Table</h3>
+<h3 class="title">Users List</h3>
 
 @if (isLoading)
 {
@@ -27,27 +27,23 @@ else if (!isAuthenticated)
 }
 else if (users != null && users.Any())
 {
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>User ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var user in users)
-            {
-                <tr>
-                    <td>@user.id</td>
-                    <td>@user.name</td>
-                    <td>@user.email</td>
-                    <td>@user.phone</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="row">
+        @foreach (var user in users)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@user.name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Email Address: @user.email</h6>
+                        <p class="card-text">
+                            <strong>User ID:</strong> @user.id <br>
+                            <strong>Phone Number:</strong> @user.phone <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 }
 else
 {
