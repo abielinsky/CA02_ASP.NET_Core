@@ -63,10 +63,10 @@ namespace CA02_ASP.NET_Core
             TypeAdapterConfig<UserDTO, UserDTO>.NewConfig().Ignore("id");
 
             // next line is for remote db connection
-            builder.Services.AddDbContext<Context>(options => options.UseMySQL(builder.Configuration.GetConnectionString("dbConnection")));
+           // builder.Services.AddDbContext<Context>(options => options.UseMySQL(builder.Configuration.GetConnectionString("dbConnection")));
 
             // next line is for local db connection
-            // builder.Services.AddDbContext<Context>(options => options.UseMySQL(builder.Configuration.GetConnectionString("dbConnectionLocal")));
+            builder.Services.AddDbContext<Context>(options => options.UseMySQL(builder.Configuration.GetConnectionString("dbConnection")));
 
             builder.Services.AddScoped(typeof(ILoginService), typeof(LoginService));
             builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
