@@ -58,7 +58,12 @@
     {
         try
         {
+            // Localhost Server
             var response = await Http.PostAsJsonAsync("https://localhost:7284/api/Auth/login", loginModel);
+
+            // Deployed Azure Server
+            // var response = await Http.GetAsync("https://libraryca2app.azurewebsites.net/api/Auth/login");
+
 
             if (response.IsSuccessStatusCode)
             {
