@@ -14,7 +14,7 @@ namespace CA02_ASP.NET_Core.Data.Services
     }
     public interface ILoginService
     {
-        string Login(string username, string password);
+        string Login(string username, string Password);
     }
 
     public class LoginService : ILoginService
@@ -26,18 +26,23 @@ namespace CA02_ASP.NET_Core.Data.Services
             _configuration = configuration;
             _context = context;
         }
-        public string Login(string username, string password)
+
+
+
+        public string Login(string username, string Password)
         {
             // Find user by email
-            var user = _context.Users.FirstOrDefault(u => u.email == username && u.password_hash == password);
+            var user = _context.Users.FirstOrDefault(u => u.email == username && u.password_hash == Password);
 
             if (user == null) return null;
-            if (user.password_hash != password) return null;
+            if (user.password_hash != Password) return null;
 
             // Generate JWT token
             var token = GenerateJwtToken(user);
             return token;
         }
+
+
         private string GenerateJwtToken(UsersEntity user)
         {
             // Retrieve and validate configuration values

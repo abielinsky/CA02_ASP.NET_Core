@@ -22,10 +22,6 @@ namespace CA02_ASP.NET_Core
         public static void Main(string[] args)
         {
 
-
-
-
-
             var builder = WebApplication.CreateBuilder(args);
             var config = builder.Configuration;
             // Add services to the container.
@@ -63,7 +59,7 @@ namespace CA02_ASP.NET_Core
             TypeAdapterConfig<UserDTO, UserDTO>.NewConfig().Ignore("id");
 
             // next line is for remote db connection
-           // builder.Services.AddDbContext<Context>(options => options.UseMySQL(builder.Configuration.GetConnectionString("dbConnection")));
+            // builder.Services.AddDbContext<Context>(options => options.UseMySQL(builder.Configuration.GetConnectionString("dbConnection")));
 
             // next line is for local db connection
             builder.Services.AddDbContext<Context>(options => options.UseMySQL(builder.Configuration.GetConnectionString("dbConnection")));
